@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import ToDoItem from './ToDoItem';
 
 type ToDoList = string[];
 
@@ -16,7 +17,6 @@ class ToDos extends Component {
     }
   }
   componentWillMount() {
-    //fetch('https://5000-cawoodm-pyreact-oft7hvkp559.ws-eu105.gitpod.io/shopping-list')
     fetch('/api/shopping-list')
       .then(res => res.json())
       .then(items => {
@@ -31,9 +31,9 @@ class ToDos extends Component {
     const { toDos: items } = this.state;
     return (
       <>
-        <h2>ToDos v0.0.5</h2>
+        <h2>ToDos v0.0.6</h2>
         <ul>
-          {items.map(item => <li key={item}>{item}</li>)}
+          {items.map(item => <ToDoItem name={item}/>)}
         </ul>
       </>
     )
