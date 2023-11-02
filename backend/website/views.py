@@ -9,10 +9,10 @@ views = Blueprint('views', __name__)
 @views.route('/')
 @views.route('/<path:path>')
 def index(path='index.html'):
-    return send_from_directory('dist', path), {"Access-Control-Allow-Origin": "*"}
+    return send_from_directory('dist', path)
 
 
 @views.route('/api/shopping-list')
 def todos():
 
-    return ['Grapes', 'Soap', 'Spaghetti', 'Marmalade', 'Bread'], {"Access-Control-Allow-Origin": "*"}
+    return ['Grapes', 'Soap', 'Spaghetti', 'Marmalade', 'Bread'] #, {"Access-Control-Allow-Origin": "https://5173-cawoodm-pyreact-oft7hvkp559.ws-eu105.gitpod.io", "Access-Control-Allow-Credentials": "true"}
