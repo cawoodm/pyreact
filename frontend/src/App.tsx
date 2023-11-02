@@ -5,8 +5,6 @@ import './App.css'
 import ToDos from './Todos'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
       <div>
@@ -16,11 +14,18 @@ function App() {
       </div>
       <ToDos />
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+        <Btn></Btn>
       </div>
     </>
+  )
+}
+
+function Btn() {
+  const [count, setCount] = useState(0)
+  return (
+    <button onClick={() => setCount((count) => count + 1)}>
+      count is {count}
+    </button>
   )
 }
 
