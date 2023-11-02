@@ -9,7 +9,7 @@ views = Blueprint('views', __name__)
 @views.route('/')
 @views.route('/<path:path>')
 def index(path='index.html'):
-    return send_from_directory('dist', path)
+    return send_from_directory('ui', path)
 
 
 @views.route('/api/shopping-list')
